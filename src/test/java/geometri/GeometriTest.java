@@ -32,11 +32,12 @@ public class GeometriTest {
 	  System.out.println("Ini adalah test luasSegitiga()");
 //	  gmt.luasSegitigaSatu(9.01, 9.8);
 //	  gmt.luasSegitigaDua(9.01, 9.8);
-	  assertEquals(gmt.luasSegitigaSatu(9.01, 9.8), gmt.luasSegitigaDua(9.01, 9.8));
+	  assertEquals(gmt.luasSegitigaSatu(9.01, 9.8),(double)1/2*9.01*9.8 );
   }
 
   @Test
   public void luasTrapesiumTest() {
 	  System.out.println("Ini adalah test luasTrapesium()");
+	  assertEquals(gmt.luasTrapesium(12.0, 13.0, 5.0), (12.0+13.0)/2*5.0);
   }
 }
