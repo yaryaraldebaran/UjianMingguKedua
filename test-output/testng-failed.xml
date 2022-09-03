@@ -6,7 +6,7 @@
       <class name="matematika.MatematikaTest">
         <methods>
           <include name="befTest"/>
-          <include name="modulusTest"/>
+          <include name="pembagianTest"/>
         </methods>
       </class> <!-- matematika.MatematikaTest -->
     </classes>

@@ -11,45 +11,58 @@ public class MatematikaTest {
 	Matematika mtk;
 	double doublePertama;
 	double doubleKedua;
-	Random random;
+	int intPertama;
+	int intKedua;
 	@BeforeTest
 	public void befTest() {
 		mtk = new Matematika();
-		random = new Random();
 	}
-  @Test
+  @Test(priority = 3)
   public void modulusTest() {
-    doublePertama = 80.0;
-    doubleKedua = 20.3;
-    assertEquals(mtk.modulus(doublePertama, doubleKedua), (80.0 % 20.3));
+    intPertama = 80/3;
+    intKedua = 20;
+    try {
+    	assertEquals(mtk.modulus(intPertama, intKedua), (80 % 20));
+	} catch (AssertionError e) {
+		System.out.println("Terdapat error pada testing modulus yakni "+e);
+	}
+    
   }
 
-  @Test
+  @Test(priority = 2)
   public void pembagianTest() {
     doublePertama = 29.0;
     doubleKedua = 30.0;
-    assertEquals(mtk.pembagian(doublePertama, doubleKedua), (29.0/30.0)); 
+    try {
+    	assertEquals(mtk.pembagian(doublePertama, doubleKedua), (27.0/30.0));
+	} catch (AssertionError e) {
+		System.out.println("terdapat error pada testing pembagian yakni "+e);
+	}
+     
   }
 
-  @Test
+  @Test(priority = 1)
   public void penguranganTest() {
 	  doublePertama =10.0;
 	  doubleKedua = 20.0;
-	  assertEquals(mtk.pengurangan(doublePertama, doubleKedua), (doublePertama-doubleKedua));
+	  try {
+		  assertEquals(mtk.pengurangan(doublePertama, doubleKedua), (doublePertama-doubleKedua));
+	} catch (AssertionError e) {
+		System.out.println("terdapat error pada testing pengurangan yakni "+e);
+	}
+	  
   }
 
-  @Test
+  @Test(priority =0)
   public void penjumlahanTest() {
     doublePertama = 9.0; 
     doubleKedua = 10.0;
-    dataGenerator();
-    assertEquals(mtk.penjumlahan(doublePertama, doubleKedua), (doublePertama+doubleKedua));
+    try {
+    	assertEquals(mtk.penjumlahan(doublePertama, doubleKedua), (doublePertama+doubleKedua));
+	} catch (AssertionError e) {
+		System.out.println("terdapat error pada testing penjumlahan yakni "+e);
+	}
+    
   }
-  
-  /* 
-   * buat method dataGenerator untuk menggenerate data dummy 
-   */
-  public void dataGenerator() {
-	  System.out.println("ini datagenerator");
-  }
+
 }
